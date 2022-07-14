@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        width: 300px;
+        height: 200px;
+        background-color: #5465fc;
+      }
+      .title {
+        text-align: center;
+        color: #eceff2;
+      }
+      .container{
+        display: flex;
+        flex-direction: column;
+        margin: 2px;
+        align-items: center;
+        flex-wrap: wrap
+      }
+    button {
+    background-color: white;
+    color:black;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 9px;
+    font-family: monospace;
+    border: none;
+    transition-duration: 0.3s;
+    font-weight: bold;
+    }
+    #logout {
+      margin-bottom: 10px;
+    }
+    button:hover{
+      color: red;
+      transform: scale(1.2);
+        
+    }
+      /* .toggle-input {
+        display: none;
+      }
+      .toggle-label {
+        position: relative;
+        display: inline-block;
+        min-width: 112px;
+        cursor: pointer;
+        font-weight: 500;
+        text-align: left;
+        margin: 16px;
+        padding: 16px 0 16px 5px;
+      }
+      .toggle-label:before,
+      .toggle-label:after {
+        content: "";
+        position: absolute;
+        margin: 0;
+        outline: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: all 0.3s ease;
+      }
+      .toggle-label:before {
+        right: -45px;
+        width: 34px;
+        height: 14px;
+        background-color: #9e9e9e;
+        border-radius: 8px;
+      }
+      .toggle-label:after {
+        right: -30px;
+        width: 20px;
+        height: 20px;
+        background-color: #fafafa;
+        border-radius: 50%;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.098), 0 1px 5px 0 rgba(0, 0, 0, 0.084);
+      }
+      .toggle-label .toggle--on {
+        display: none;
+      }
+      .toggle-label .toggle--off {
+        display: inline-block;
+      }
+      .toggle-input:checked + .toggle-label:before {
+        background-color: #2196f387;
+      }
+      .toggle-input:checked + .toggle-label:after {
+        background-color: #2196f3;
+        transform: translate(80%, -50%);
+      }
+      .toggle-input:checked + .toggle-label .toggle--on {
+        display: inline-block;
+      }
+      .toggle-input:checked + .toggle-label .toggle--off {
+        display: none;
+      }
+      .toggle-label {
+        transition: color 300ms;
+      }
+      .disabled {
+        color: grey;
+      }
+      .e-div {
+        font-size: medium;
+        color: black;
+        font-weight: 500;
+        margin-left: 20px;
+      }
+      #log {
+        color: green;
+        margin-left: 20px;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h2>7 Backend Keywords</h2> 
+        
+    <div class="container">
+    <button id="analyze">Analyze Keywords</button>
+    <br />
+    
+    <button id="keywordResearchTool">Keyword Research</button>
+    <br />
+  </div>
+    <br />
+    <button id="logout">Logout</button>
+    <br />
+  </body>
+  <script src="js/popup.js"></script>
+</html>
