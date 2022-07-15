@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/kr.css" />
+    <script src="../jquery-3.3.1.min.js"></script>
+    <script src="../../libs/popper5.min.js"></script>
+    <script src="../../libs/bootstrap5.min.js"></script>
+    <script src="../../libs/bootstrap5.bundle.min.js"></script>
+    <script src="../../libs/sweetalert.min.js"></script>
+    <style>
+      .h5-container {
+        margin-top: 8px;
+        border: 1px solid #fde89e;
+        border-radius: 10px;
+        min-width: 200px;
+        height: 70px;
+        line-height: 70px;
+      }
+      .h5-style {
+        font-size: 16px;
+        margin-left: 15px;
+        display: inline-block;
+      }
+      .h5-img {
+        width: 23px;
+        margin: 20px 10px;
+      }
+
+      .tableFixHead thead th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: wheat;
+      }
+
+      /* Just common table stuff. Really. */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        padding: 8px 16px;
+      }
+      th {
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <table data-sticky-header="true" style="color: white; width: 100%">
+      <tr>
+        <td style="padding-left: 30px; border: 1px solid #23282d; background-color: rgb(35, 40, 45)">
+          <div class="logo-container">
+            <img src="../../images/icon-64.png" style="margin: 20px 0px; width: 170px" />
+          </div>
+        </td>
+        <td style="border: 1px solid #23282d; background-color: rgb(35, 40, 45)">
+          <div class="logo-container">
+            <img src="../../images/publishing.png" style="margin: 20px 0px; max-width: 350px" />
+          </div>
+        </td>
+        <td style="padding-left: 10px; text-align: left; border: 1px solid #23282d; background-color: rgb(35, 40, 45)">
+          <span style="font-weight: bold; margin-left: 5px">How to</span>
+          <div class="h5-container">
+            <a href="https://www.youtube.com/channel/UCkOTYGNYxS6jq7JT3Fk5NEQ" style="color: white">
+              <h5 class="h5-style">Watch Video Tutorials</h5>
+            </a>
+          </div>
+          <!-- <div style="border: 1px solid gold; border-top-left-radius: 10px; border-top-right-radius: 10px; width: 250px; height: 40px; line-height: 40px; text-align: center">
+            <a href="https://www.youtube.com/channel/UCkOTYGNYxS6jq7JT3Fk5NEQ" target="_blank" style="color: white"> KDP YouTube Tutorials </a>
+          </div> -->
+        </td>
+        <td style="padding-left: 10px; text-align: left; border: 1px solid #23282d; background-color: rgb(35, 40, 45)">
+          <span style="font-weight: bold; margin-left: 5px">Help</span>
+          <div class="h5-container">
+            <a href="https://www.facebook.com/groups/2690865597847008" style="color: white">
+              <h5 class="h5-style">Join Facebook Group</h5>
+            </a>
+          </div>
+        </td>
+        <td style="padding-left: 10px; text-align: left; border: 1px solid #23282d; background-color: rgb(35, 40, 45)">
+          <span style="font-weight: bold; margin-left: 5px">Download</span>
+          <div class="h5-container">
+            <a
+              href="javascript: void(0)"
+              id="download_excel_file_${
+                chrome.runtime.id
+              }"
+              style="color: white"
+            >
+              <h5 class="h5-style">Page Data</h5>
+            </a>
+          </div>
+        </td>
+        <td style="padding-left: 10px; text-align: left; border: 1px solid #23282d; background-color: rgb(35, 40, 45)">
+          <span style="font-weight: bold; margin-left: 5px">Self Publishing Titans</span>
+          <div class="h5-container">
+            <a href="https://chrome.google.com/webstore/detail/kdp-amazon-bsr-keyword-re/eefljgmhgaidffapnppcmmafobefjece?hl=en-US" style="color: white">
+              <h5 class="h5-style">More Free Tools</h5>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="container custom-container">
+      <br />
+      <div class="row">
+        <div class="col-md-4">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon2">Product Keyword</span>
+            </div>
+            <input type="text" class="form-control" id="p_keyword" aria-describedby="basic-addon2" />
+          </div>
+        </div>
+        <div class="col-md-1">
+          <input class="form-check-input" type="checkbox" value="" id="amazonCheck" checked />
+          <label class="form-check-label" for="amazonCheck">Amazon</label>
+        </div>
+        <div class="col-md-1">
+          <input class="form-check-input" type="checkbox" value="" id="googleCheck" checked />
+          <label class="form-check-label" for="googleCheck">Google</label>
+        </div>
+        <div class="col-md-1">
+          <input class="form-check-input" type="checkbox" value="" id="bingCheck" checked />
+          <label class="form-check-label" for="bingCheck">Bing</label>
+        </div>
+        <div class="col-md-2">
+          <div class="input-group">
+            <label class="input-group-text" for="countrySelector">Country</label>
+
+            <select name="" autocomplete="off" id="countrySelector" tabindex="0" class="form-select a-native-dropdown a-declarative" aria-pressed="false">
+              <option selected value="com">United States</option>
+              <option value="co.uk"><i class="flag flag-united-states"></i>United Kingdom</option>
+              <option value="com.au"><i class="flag flag-united-states"></i>Australia</option>
+              <option value="ca"><i class="flag flag-united-states"></i>Canada</option>
+              <!-- <option value="com.es"><i class="flag flag-united-states"></i>Estonia</option> -->
+              <option value="com.it"><i class="flag flag-united-states"></i>Italy</option>
+              <option value="com.de"><i class="flag flag-united-states"></i>Germany</option>
+              <option value="com.fr"><i class="flag flag-united-states"></i>French</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="input-group mb-3">
+            <button type="submit" id="analyze" class="btn btn-warning">Analyze</button>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="input-group mb-3">
+            <button type="submit" id="download" class="btn btn-success">Download</button>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="input-group mb-3">
+            <button type="submit" id="reset" class="btn btn-danger">Reset</button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <table class="table table-striped table-css tableFixHead" id="scoreTable">
+        <thead class="thead-light">
+          <tr>
+            <th colspan="2"></th>
+            <th colspan="9" class="seperation">Basic Data</th>
+            <th colspan="2" class="seperation">Google Data</th>
+            <th colspan="9" class="seperation">Advanced Data</th>
+          </tr>
+          <tr>
+            <th>Select <input class="form-check-input" type="checkbox" value="" id="selectAll" /></th>
+            <th>Keywords <span id="totalKeywords">(0)</span></th>
+            <th class="seperation">Comp Score</th>
+            <th>Total Results</th>
+            <th>1st Page</th>
+            <th>Avg. Rev.</th>
+            <th>High Rev.</th>
+            <th>Low Rev.</th>
+            <th>Avg. Price</th>
+            <th>High Price</th>
+            <th>Low Price</th>
+            <th class="seperation">Search Vol</th>
+            <th>Google Trends</th>
+            <th class="seperation">Monthly Sales</th>
+            <th>Independ Pub.</th>
+            <th>Avg. BSR</th>
+            <th>High BSR</th>
+            <th>Low BSR</th>
+            <th>Keyword Score</th>
+            <th>Score Color</th>
+            <th>Analyze</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <br />
+    <br />
+    <webview id="#mywebview" src="http://news.google.com/" width="640" height="480"></webview>
+  </body>
+
+  <script src="config.js"></script>
+  <script src="create_csv.js"></script>
+  <script src="sampleData.js"></script>
+  <script src="kr_script.js"></script>
+  <script src="kr_render.js"></script>
+</html>

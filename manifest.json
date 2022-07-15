@@ -1,0 +1,50 @@
+{
+  "name": "KDP / Amazon 7 Backend Keywords Suggestions Tool",
+  "version": "4.6.1",
+  "description": "Amazon & KDP 7 Backend Keywords Suggestions",
+  "permissions": ["http://*/*", "https://*/*", "storage", "*://*.google.com/*", "*://*.bing.com/*", "*://*.amazon.com/*"],
+  "browser_action": {
+    "default_title": "KDP / Amazon BSR & Keyword Research SEO Tool",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon-64.png",
+      "32": "images/icon-64.png",
+      "48": "images/icon-64.png",
+      "64": "images/icon-64.png",
+      "128": "images/icon-64.png"
+    }
+  },
+  "background": {
+    "scripts": ["libs/jquery-3.3.1.min.js", "js/keywordResearch/kr_bg.js", "js/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.com/*"],
+      "all_frames": true,
+      "js": ["js/jquery-3.3.1.min.js", "js/content2.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "images/icon-64.png",
+    "32": "images/icon-64.png",
+    "48": "images/icon-64.png",
+    "64": "images/icon-64.png",
+    "128": "images/icon-64.png"
+  },
+  "manifest_version": 2,
+  "web_accessible_resources": [
+    "js/execScript.js",
+    "images/icon-64.png",
+    "images/bullhorn-solid.png",
+    "images/home-solid.png",
+    "images/publishing.png",
+    "images/logo2.png",
+    "images/Download_icon.png",
+    "images/right-arrow.png",
+    "images/right-arrow.png",
+    "options.html",
+    "js/keywordResearch/kr.html"
+  ]
+}

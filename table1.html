@@ -1,0 +1,201 @@
+<style>
+	.${stylePrefix}-tablerender {
+		border-collapse: collapse;
+		border: 1px solid white;
+		color: white;
+		text-align: center;
+		font-size: 16px;
+	}
+
+	.${stylePrefix}-tablerender td {
+		border: 1px solid #23282d;
+		background-color: rgb(35, 40, 45);
+		text-align: left;
+	}
+	.${stylePrefix}-tdLast {
+		width: 450px;
+		vertical-align: middle;
+	}
+	.${stylePrefix}-tdLogo {
+		vertical-align: middle;
+	}
+
+	.${stylePrefix}-tablerender tr {
+		border: 1px solid #23282d;
+		line-height: 30px;
+	}
+	.${stylePrefix}-logoDiv {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.${stylePrefix}-title {
+		font-weight: bold;
+		margin-left: 40px;
+	}
+	.${stylePrefix}-valDiv {
+		border: 1px solid gold;
+		border-radius: 10px;
+		width: 140px;
+		text-align: center;
+		width: 1;
+	}
+	.${stylePrefix}-keywordDiv {
+		margin-left: 32px;
+		width: 200px;
+		display: flex;
+		align-items: center;
+	}
+	.${stylePrefix}-labelKey {
+		margin: 5px;
+		margin-left: 40px;
+	}
+	.${stylePrefix}-labelSpan {
+		font-weight: bold;
+		margin-left: 5px;
+	}
+	.${stylePrefix}-help {
+		width: 20px;
+		height: 20px;
+		border-radius: 100px;
+		margin: 5px;
+		line-height: 1.${stylePrefix}-2;
+		border: 1px solid #ddd;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: help;
+	}
+	.${stylePrefix}-colorSpan {
+		width: 20px;
+		height: 20px;
+		display: table;
+		background: gold;
+		border-radius: 100px;
+		margin: 5px;
+		margin-left: 20px;
+	}
+</style>
+
+<table
+	id="amazon-analysis-${chrome.runtime.id}"
+	class="${stylePrefix}-tablerender"
+>
+	<tbody>
+		<tr>
+			<td rowspan="2">
+				<div class="${stylePrefix}-logoDiv">
+					<img
+						src="chrome-extension://${chrome.runtime.id}/images/icon-64.png"
+						width="200px"
+					/>
+				</div>
+			</td>
+			<td>
+				<span class="${stylePrefix}-title">Keyword Niche Score (v1.03)</span>
+
+				<div class="${stylePrefix}-valDiv ${stylePrefix}-keywordDiv">
+					<span class="${stylePrefix}-labelKey">Loading...</span>
+					<span class="${stylePrefix}-colorSpan"></span>
+					<span
+						class="${stylePrefix}-help"
+						title="This algorithm is specifically tailored towards books as its first priority. The algorithm uses ALL key data points together to determine competitiveness. It does not include sponsored products. The higher the score the easier it will be to rank on page 1. We look for book niches with a score of 63 and up, but see what works for you. For other product research besides books, we recommend just using our data points shown in the bar and not necessarily the score. If you have any questions or need help, ask us in our Facebook Group. Happy selling! If you are experiencing problems with this Chrome Extension, please try the following: 1) try refreshing the page 2) close the browser tab and open new one 3) disable other Amazon Chrome Extensions to see if that fixes it. For more help and support please join our Facebook group."
+						>?</span
+					>
+				</div>
+			</td>
+			<td>
+				<span class="${stylePrefix}-labelSpan">Number of Results</span>
+
+				<div class="${stylePrefix}-valDiv">Loading...</div>
+			</td>
+			<td>
+				<span class="${stylePrefix}-labelSpan">Average Price</span>
+
+				<div class="${stylePrefix}-valDiv">Loading...</div>
+			</td>
+
+			<td rowspan="2" class="${stylePrefix}-tdLast">
+				<span class="${stylePrefix}-labelSpan">Resources &amp; Tools</span>
+				<div
+					style="
+						border: 1px solid gold;
+						border-radius: 8px;
+						margin-right: 25px;
+						margin-bottom: 10px;
+					"
+				>
+					<a
+						href="https://chrome.google.com/webstore/detail/huge-amazon-search-sugges/mmdamlknnafgffhlobhlmiljonijdnid?hl=en&amp;authuser=1"
+						style="color: white; margin-left: 16px"
+					>
+						<span>How to use video tutorial</span>
+						<span
+							><img
+								src="chrome-extension://${chrome.runtime.id}/images/right-arrow.png"
+								style="width: 24px; margin: 4px 10px"
+						/></span>
+					</a>
+					<a
+						href="https://www.facebook.com/groups/2690865597847008"
+						target="_blank"
+						style="color: white; display: block; margin-left: 16px"
+					>
+						<span>Join our Facebook Group</span>
+						<span
+							><img
+								src="chrome-extension://${chrome.runtime.id}/images/right-arrow.png"
+								style="width: 23px; margin: 6px 10px"
+							/>
+						</span>
+					</a>
+
+					<a
+						href="https://selfpublishingtitans.com/"
+						style="color: white; margin-left: 16px; display: block"
+					>
+						<span>More Free Tools</span>
+						<span
+							><img
+								src="chrome-extension://${chrome.runtime.id}/images/right-arrow.png"
+								style="width: 18px; margin: 4px 10px"
+						/></span>
+					</a>
+					<a
+						href="javascript: void(0)"
+						id="download_excel_file_${chrome.runtime.id}"
+						style="color: white; display: block; margin-left: 16px"
+					>
+						<span>Download all 1st page data</span>
+						<span>
+							<img
+								src="chrome-extension://${chrome.runtime.id}/images/Download_icon.png"
+								style="width: 18px; margin: 4px 10px"
+							/>
+						</span>
+					</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="${stylePrefix}-tdLogo">
+				<img
+					src="chrome-extension://${chrome.runtime.id}/images/publishing.png"
+					width="300px"
+				/>
+			</td>
+
+			<td>
+				<span class="${stylePrefix}-labelSpan">Average BSR</span>
+
+				<div class="${stylePrefix}-valDiv">Loading...</div>
+			</td>
+
+			<td>
+				<span class="${stylePrefix}-labelSpan">Average Reviews</span>
+
+				<div class="${stylePrefix}-valDiv">Loading...</div>
+			</td>
+		</tr>
+	</tbody>
+</table>

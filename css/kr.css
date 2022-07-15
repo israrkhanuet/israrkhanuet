@@ -1,0 +1,28 @@
+.display-4-cols {
+  overflow-x: auto;
+  height: 400px;
+}
+
+.custom-container {
+  max-width: 100% !important;
+}
+
+.form-check-inline {
+  width: 150px !important;
+}
+
+.table-css {
+  max-height: 85vh;
+  overflow-y: auto;
+  display: block;
+}
+
+.seperation {
+  text-align: center;
+  border-left: thin solid black;
+  border-bottom: thin solid black;
+}
+
+.colSeperator {
+  border-left: thin solid black;
+}

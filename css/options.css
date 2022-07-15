@@ -1,0 +1,12 @@
+.display-4-cols {
+  overflow-x: auto;
+  height: 400px;
+}
+
+.custom-container {
+  max-width: 100% !important;
+}
+
+.form-check-inline {
+  width: 150px !important;
+}
